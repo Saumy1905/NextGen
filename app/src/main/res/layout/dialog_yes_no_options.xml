@@ -59,6 +59,8 @@
                 style="@style/PrivacyButtonAppearance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/background_dialog"
+                android:backgroundTint="#D17E7E"
                 android:text="Cancel"
                 tools:visibility="visible" />
 
@@ -68,6 +70,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:background="@drawable/background_dialog"
+                android:backgroundTint="#828DCE"
                 android:text="Save" />
 
 
