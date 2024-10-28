@@ -311,7 +311,7 @@ class NearByFragment : BaseFragment(), OnMapReadyCallback, UpdateMapListener {
         .center(location)
         .radius(CIRCLE_RADIUS.toDouble())
         .strokeColor(R.color.black)
-        .fillColor(R.color.teal_200)
+        .fillColor(Color.argb(51, 72, 133, 237))
     )
   }
 
