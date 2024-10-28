@@ -43,7 +43,7 @@
                 android:padding="7dp"
                 android:text="@{viewModel.timestamp}"
                 android:textColor="@color/white"
-                android:textSize="10sp"
+                android:textSize="11sp"
                 app:layout_constraintBottom_toBottomOf="@+id/message"
                 app:layout_constraintEnd_toEndOf="@+id/message"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -53,3 +53,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+
+
