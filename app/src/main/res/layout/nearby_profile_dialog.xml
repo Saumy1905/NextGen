@@ -103,7 +103,7 @@
                 android:layout_marginStart="8dp"
                 android:text="Yes"
                 android:textColor="@color/home_screen_text_color"
-                android:textSize="10dp"
+                android:textSize="11sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -115,7 +115,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="No"
                 android:textColor="@color/home_screen_text_color"
-                android:textSize="10dp"
+                android:textSize="11sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/button_yes"
                 app:layout_constraintTop_toTopOf="parent" />
