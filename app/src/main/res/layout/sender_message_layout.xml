@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
         android:padding="20dp">
 
         <RelativeLayout
@@ -26,9 +26,9 @@
                 android:id="@+id/message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="35dp"
+                android:paddingStart="35dp"
                 android:paddingTop="7dp"
-                android:paddingRight="25dp"
+                android:paddingEnd="25dp"
                 android:paddingBottom="27dp"
                 android:layout_marginBottom="10dp"
                 android:text="@{viewModel.text}"
@@ -40,13 +40,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/message"
-                android:layout_marginLeft="-70dp"
+                android:layout_marginStart="-70dp"
                 android:layout_marginTop="20dp"
-                android:layout_toRightOf="@id/message"
+                android:layout_toEndOf="@id/message"
                 android:padding="7dp"
                 android:text="@{viewModel.timestamp}"
                 android:textColor="@color/white"
-                android:textSize="10sp" />
+                android:textSize="11sp" />
         </RelativeLayout>
     </RelativeLayout>
 </layout>
