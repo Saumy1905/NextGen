@@ -1,52 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"><data>
+    <variable
+        name="viewModel"
+        type="com.example.nextgen.message.MessageViewModel" />
+</data>
 
-    <data>
-                <variable
-                    name="viewModel"
-                    type="com.example.nextgen.message.MessageViewModel" />
-    </data>
-
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
         android:padding="20dp">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/parent_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:background="@drawable/sender_chat_background"
             android:onLongClick="@{viewModel.onLongClick}"
-            android:background="@drawable/sender_chat_background">
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="35dp"
-                android:paddingTop="7dp"
-                android:paddingRight="25dp"
-                android:paddingBottom="27dp"
                 android:layout_marginBottom="10dp"
+                android:paddingStart="35dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="25dp"
+                android:paddingBottom="27dp"
                 android:text="@{viewModel.text}"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/message"
-                android:layout_marginLeft="-70dp"
                 android:layout_marginTop="20dp"
-                android:layout_toRightOf="@id/message"
                 android:padding="7dp"
                 android:text="@{viewModel.timestamp}"
                 android:textColor="@color/white"
-                android:textSize="10sp" />
-        </RelativeLayout>
-    </RelativeLayout>
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="@+id/message"
+                app:layout_constraintEnd_toEndOf="@+id/message"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/message"
+                app:layout_constraintTop_toTopOf="@+id/message"
+                tools:ignore="RtlCompat" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+
