@@ -310,8 +310,7 @@ class NearByFragment : BaseFragment(), OnMapReadyCallback, UpdateMapListener {
       CircleOptions()
         .center(location)
         .radius(CIRCLE_RADIUS.toDouble())
-        .strokeColor(R.color.black)
-        .fillColor(Color.argb(51, 72, 133, 237))
+        .fillColor(R.color.Nearby_people_circle)
     )
   }
 
