@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:background="@drawable/background_dialog"
         android:backgroundTint="#CCBBE9"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="16dp"
-        >
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/tvDialogTitle"
@@ -22,14 +20,22 @@
             android:layout_height="36dp"
             android:text="Do you want to proceed?"
             android:textColor="@android:color/black"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/btnCancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDialogTitle">
 
             <RadioButton
                 android:id="@+id/rbYes"
@@ -45,36 +51,39 @@
                 android:layout_marginStart="16dp"
                 android:text="No"
                 android:textColor="@color/black" />
-        </LinearLayout>
+        </RadioGroup>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancel"
+            style="@style/PrivacyButtonAppearance"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:background="@drawable/background_dialog"
+            android:backgroundTint="#D17E7E"
+            android:text="Cancel"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnSave"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnSave"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            tools:visibility="visible" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnCancel"
-                style="@style/PrivacyButtonAppearance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/background_dialog"
-                android:backgroundTint="#D17E7E"
-                android:text="Cancel"
-                tools:visibility="visible" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSave"
+            style="@style/PrivacyButtonAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_dialog"
+            android:backgroundTint="#828DCE"
+            android:text="Save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnCancel"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            app:layout_constraintWidth_min="100dp"
+            app:layout_goneMarginStart="20dp" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnSave"
-                style="@style/PrivacyButtonAppearance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:background="@drawable/background_dialog"
-                android:backgroundTint="#828DCE"
-                android:text="Save" />
-
-
-        </LinearLayout>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
